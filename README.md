@@ -96,6 +96,25 @@ Para instruções detalhadas sobre como baixar e organizar materiais do Notebook
 - [📘 GUIA_ADICIONAR_MATERIAIS.md](./GUIA_ADICIONAR_MATERIAIS.md) - Guia completo passo a passo
 - [📋 README_MATERIAIS.md](./README_MATERIAIS.md) - Visão geral do sistema
 
+## 🌟 Exemplos de Uso
+
+Veja este boilerplate em ação em projetos reais:
+
+### 🛰️ SWOT: Da Estratégia Empresarial ao Monitoramento Oceânico Global
+
+**Repositório**: [notebooklm-SWOT](https://github.com/araguaci/notebooklm-SWOT)  
+**Demo**: [swot-chi.vercel.app](https://swot-chi.vercel.app)
+
+Este é um exemplo prático de implementação deste boilerplate, demonstrando como organizar e exibir materiais do NotebookLM sobre análise SWOT, desde aplicações empresariais até monitoramento oceânico global.
+
+**Principais modificações implementadas**:
+- Personalização do tema e cores para o contexto SWOT
+- Organização de materiais por categorias específicas
+- Integração com conteúdo real do NotebookLM
+- Deploy em produção na Vercel
+
+Para uma análise detalhada das modificações feitas neste exemplo, consulte [ANALISE_MODIFICACOES_SWOT.md](./ANALISE_MODIFICACOES_SWOT.md).
+
 ## 🎯 Tipos de Material Suportados
 
 | Tipo | Extensões | Descrição |
