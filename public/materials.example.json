@@ -1,0 +1,53 @@
+{
+  "materials": [
+    {
+      "id": "exemplo-documento",
+      "title": "Exemplo de Documento",
+      "description": "Este é um exemplo de como adicionar um documento ao catálogo. Substitua pelos seus próprios materiais.",
+      "type": "document",
+      "file": "exemplo.pdf",
+      "category": "documentos",
+      "notebookUrl": "https://notebooklm.google.com/notebook/SEU-ID-AQUI",
+      "tags": ["Exemplo", "Documento", "Tutorial"]
+    },
+    {
+      "id": "exemplo-video",
+      "title": "Exemplo de Vídeo",
+      "description": "Este é um exemplo de como adicionar um vídeo ao catálogo.",
+      "type": "video",
+      "file": "exemplo.mp4",
+      "category": "videos",
+      "notebookUrl": "https://notebooklm.google.com/notebook/SEU-ID-AQUI",
+      "tags": ["Exemplo", "Vídeo"]
+    },
+    {
+      "id": "exemplo-audio",
+      "title": "Exemplo de Áudio",
+      "description": "Este é um exemplo de como adicionar um áudio ao catálogo.",
+      "type": "audio",
+      "file": "exemplo.m4a",
+      "category": "audios",
+      "notebookUrl": "https://notebooklm.google.com/notebook/SEU-ID-AQUI",
+      "tags": ["Exemplo", "Áudio"]
+    },
+    {
+      "id": "exemplo-imagem",
+      "title": "Exemplo de Imagem",
+      "description": "Este é um exemplo de como adicionar uma imagem ao catálogo.",
+      "type": "image",
+      "file": "exemplo.png",
+      "category": "imagens",
+      "notebookUrl": "https://notebooklm.google.com/notebook/SEU-ID-AQUI",
+      "tags": ["Exemplo", "Imagem"]
+    }
+  ],
+  "notebooks": [
+    {
+      "id": "exemplo-notebook",
+      "name": "Meu Notebook de Exemplo",
+      "url": "https://notebooklm.google.com/notebook/SEU-ID-AQUI",
+      "description": "Descrição do seu notebook"
+    }
+  ]
+}
+
