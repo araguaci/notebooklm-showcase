@@ -8,7 +8,7 @@ Obrigado por considerar contribuir com este projeto! Este documento fornece dire
 
 Se você encontrou um bug:
 
-1. Verifique se o bug já não foi reportado nas [Issues](https://github.com/seu-usuario/artefatos-notebooklm/issues)
+1. Verifique se o bug já não foi reportado nas [Issues](https://github.com/araguaci/notebooklm-showcase/issues)
 2. Se não foi reportado, crie uma nova issue com:
    - Título descritivo
    - Descrição clara do problema

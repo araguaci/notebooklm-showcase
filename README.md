@@ -14,6 +14,7 @@
 - 🎨 **Interface Moderna**: Design dark mode elegante com animações suaves
 - 📦 **Gerenciamento Dinâmico**: Catálogo centralizado em JSON
 - 🎯 **Múltiplos Formatos**: Suporte para documentos, vídeos, áudios e imagens
+- 📄 **Visualização Markdown**: Renderização formatada de documentos Markdown com estilos personalizados
 - 🚀 **Fácil de Usar**: Script interativo para adicionar materiais
 - 📱 **Totalmente Responsivo**: Funciona perfeitamente em todos os dispositivos
 - ⚡ **Performance**: Construído com Next.js 14 e otimizações modernas
@@ -135,12 +136,18 @@ O script irá perguntar todas as informações necessárias e adicionar automati
 
 Veja este boilerplate em ação em projetos reais:
 
+### ⚔️ Sun Tzu: A Arte da Guerra na Modernidade e Teoria
+
+**Demo**: [swot-chi.vercel.app](https://swot-chi.vercel.app)
+
+Aplicação do template para explorar os princípios estratégicos de Sun Tzu e sua relevância no contexto moderno.
+
 ### 🛰️ SWOT: Da Estratégia Empresarial ao Monitoramento Oceânico Global
 
 **Repositório**: [notebooklm-SWOT](https://github.com/araguaci/notebooklm-SWOT)  
 **Demo**: [swot-chi.vercel.app](https://swot-chi.vercel.app)
 
-Este é um exemplo prático de implementação deste boilerplate, demonstrando como organizar e exibir materiais do NotebookLM sobre análise SWOT, desde aplicações empresariais até monitoramento oceânico global.
+Exemplo prático de implementação deste boilerplate, demonstrando como organizar e exibir materiais do NotebookLM sobre análise SWOT, desde aplicações empresariais até monitoramento oceânico global.
 
 **Principais modificações implementadas:**
 
@@ -151,14 +158,28 @@ Este é um exemplo prático de implementação deste boilerplate, demonstrando c
 
 Para uma análise detalhada das modificações feitas neste exemplo, consulte [ANALISE_MODIFICACOES_SWOT.md](./ANALISE_MODIFICACOES_SWOT.md).
 
+### 🌍 Análise PESTEL: Aplicações no Mercado Moderno
+
+**Demo**: [pestel-chi.vercel.app](https://pestel-chi.vercel.app)
+
+Implementação focada na análise PESTEL, explorando os seis fatores macroambientais (Político, Econômico, Social, Tecnológico, Ambiental e Legal) e suas aplicações no mercado brasileiro e global.
+
+### 📋 5W2H: Do Planejamento à Execução
+
+**Demo**: [5w2h-chi.vercel.app](https://5w2h-chi.vercel.app)
+
+Guia prático sobre a metodologia 5W2H, demonstrando como transformar ideias em ações concretas com ferramentas estruturadas de gestão e planejamento estratégico.
+
 ## 🎯 Tipos de Material Suportados
 
-| Tipo      | Extensões            | Descrição                    |
-| --------- | -------------------- | ---------------------------- |
-| `document` | PDF, MD, TXT, DOCX   | Documentos e textos          |
-| `video`    | MP4, WebM            | Vídeos explicativos          |
-| `audio`    | M4A, MP3, WAV        | Resumos em áudio             |
-| `image`    | PNG, JPG, SVG        | Infográficos, mapas mentais |
+| Tipo       | Extensões          | Descrição                   |
+| ---------- | ------------------ | --------------------------- |
+| `document` | PDF, MD, TXT, DOCX | Documentos e textos         |
+| `video`    | MP4, WebM          | Vídeos explicativos         |
+| `audio`    | M4A, MP3, WAV      | Resumos em áudio            |
+| `image`    | PNG, JPG, SVG      | Infográficos, mapas mentais |
+
+> **📄 Nota:** Arquivos Markdown (`.md`) são automaticamente detectados e exibidos com visualização formatada, incluindo suporte para tabelas, código, listas e outros elementos do GitHub Flavored Markdown.
 
 ## 📁 Estrutura do Projeto
 
@@ -236,7 +257,7 @@ Veja os [Guias de Adaptação](#-criando-um-novo-projeto) para instruções deta
 
 ### Vercel (Recomendado)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/seu-usuario/artefatos-notebooklm)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/araguaci/notebooklm-showcase)
 
 ### Outras Plataformas
 
@@ -273,9 +294,9 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para 
 
 ## 📞 Suporte
 
-- 🐛 [Reportar Bug](https://github.com/seu-usuario/artefatos-notebooklm/issues)
-- 💡 [Sugerir Feature](https://github.com/seu-usuario/artefatos-notebooklm/issues)
-- 📧 Email: seu-email@exemplo.com
+- 🐛 [Reportar Bug](https://github.com/araguaci/notebooklm-showcase/issues)
+- 💡 [Sugerir Feature](https://github.com/araguaci/notebooklm-showcase/issues)
+- 📧 Email: [artesdosul@proton.me](mailto:artesdosul@proton.me)
 
 ## ⭐ Se este projeto foi útil, considere dar uma estrela
 

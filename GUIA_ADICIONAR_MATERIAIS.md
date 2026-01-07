@@ -278,5 +278,5 @@ Use tags para facilitar a busca:
 
 ---
 
-**Precisa de ajuda?** Abra uma [issue](https://github.com/seu-usuario/artefatos-notebooklm/issues) no GitHub!
+**Precisa de ajuda?** Abra uma [issue](https://github.com/araguaci/notebooklm-showcase/issues) no GitHub!
 
