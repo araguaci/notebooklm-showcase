@@ -63,7 +63,7 @@ export default function MarkdownPage() {
     return (
       <div className="min-h-screen bg-[#030303] text-white flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-400 mb-4"></div>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#FF8000] mb-4"></div>
           <p className="text-gray-400">Carregando documento...</p>
         </div>
       </div>
@@ -79,7 +79,7 @@ export default function MarkdownPage() {
           <p className="text-gray-400 mb-6">{error}</p>
           <button
             onClick={() => router.push("/")}
-            className="px-6 py-3 bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-400 rounded-lg transition-colors border border-indigo-500/30"
+            className="px-6 py-3 bg-[#FF8000]/20 hover:bg-[#FF8000]/30 text-[#FF8000] rounded-lg transition-colors border border-[#FF8000]/30"
           >
             Voltar para a página inicial
           </button>
@@ -94,7 +94,7 @@ export default function MarkdownPage() {
     <div className="min-h-screen bg-[#030303] text-white">
       {/* Background Glows */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[10%] -left-[10%] h-[40%] w-[40%] rounded-full bg-indigo-500/10 blur-[120px]" />
+        <div className="absolute -top-[10%] -left-[10%] h-[40%] w-[40%] rounded-full bg-[#FF8000]/10 blur-[120px]" />
         <div className="absolute top-[20%] -right-[10%] h-[50%] w-[50%] rounded-full bg-blue-500/5 blur-[120px]" />
       </div>
 
@@ -115,7 +115,7 @@ export default function MarkdownPage() {
                 <a
                   href={`/${slug}.md`}
                   download
-                  className="flex items-center gap-2 px-4 py-2 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 rounded-lg transition-colors border border-indigo-500/30"
+                  className="flex items-center gap-2 px-4 py-2 bg-[#FF8000]/10 hover:bg-[#FF8000]/20 text-[#FF8000] rounded-lg transition-colors border border-[#FF8000]/30"
                 >
                   <Download size={18} />
                   <span className="hidden sm:inline">Baixar</span>
@@ -142,10 +142,10 @@ export default function MarkdownPage() {
             className="mb-8"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 rounded-xl bg-indigo-500/10 text-indigo-400">
+              <div className="p-3 rounded-xl bg-[#FF8000]/10 text-[#FF8000]">
                 <FileText size={24} />
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+              <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#FF8000] to-cyan-400 bg-clip-text text-transparent">
                 {title}
               </h1>
             </div>
@@ -166,7 +166,7 @@ export default function MarkdownPage() {
           <div className="max-w-5xl mx-auto text-center">
             <button
               onClick={() => router.push("/")}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 rounded-lg transition-colors border border-indigo-500/30"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF8000]/10 hover:bg-[#FF8000]/20 text-[#FF8000] rounded-lg transition-colors border border-[#FF8000]/30"
             >
               <ArrowLeft size={18} />
               Voltar para a página inicial

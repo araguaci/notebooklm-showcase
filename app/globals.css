@@ -22,7 +22,7 @@
   }
   
   .prose a {
-    @apply text-indigo-400 hover:text-indigo-300 transition-colors;
+    @apply text-[#FF8000] hover:text-[#FF9933] transition-colors;
   }
   
   .prose code {
@@ -34,7 +34,7 @@
   }
   
   .prose blockquote {
-    @apply border-l-4 border-indigo-500/50 pl-6 py-2 my-6 italic;
+    @apply border-l-4 border-[#FF8000]/50 pl-6 py-2 my-6 italic;
   }
   
   .prose ul,

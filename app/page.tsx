@@ -24,7 +24,7 @@ const Hero = () => (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-indigo-300 mb-6"
+      className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-[#FF9933] mb-6"
     >
       <BookOpen size={14} /> Materiais do NotebookLM
     </motion.div>
@@ -70,11 +70,9 @@ const MaterialCard = ({
   notebookUrl?: string;
   tags?: string[];
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   const getTypeColor = () => {
     switch (type) {
-      case "document": return "from-indigo-500/20 to-purple-500/20";
+      case "document": return "from-[#FF8000]/20 to-purple-500/20";
       case "video": return "from-red-500/20 to-pink-500/20";
       case "audio": return "from-green-500/20 to-emerald-500/20";
       case "image": return "from-blue-500/20 to-cyan-500/20";
@@ -93,15 +91,13 @@ const MaterialCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="group relative rounded-3xl bg-white/[0.02] border border-white/10 p-6 hover:border-indigo-500/50 transition-all duration-300 overflow-hidden"
+      className="group relative rounded-3xl bg-white/[0.02] border border-white/10 p-6 hover:border-[#FF8000]/50 transition-all duration-300 overflow-hidden"
     >
       <div className={`absolute inset-0 bg-gradient-to-br ${getTypeColor()} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
       
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4">
-          <div className="p-3 rounded-xl bg-indigo-500/10 text-indigo-400">
+          <div className="p-3 rounded-xl bg-[#FF8000]/10 text-[#FF8000]">
             {icon}
           </div>
           {isMarkdown ? (
@@ -118,7 +114,7 @@ const MaterialCard = ({
               rel="noopener noreferrer"
               className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
               onClick={(e) => {
-                if (type === "image") {
+                if (type === "image" && typeof window !== "undefined") {
                   e.preventDefault();
                   window.open(`/${file}`, "_blank");
                 }
@@ -137,7 +133,7 @@ const MaterialCard = ({
             {tags.slice(0, 3).map((tag, idx) => (
               <span
                 key={idx}
-                className="px-2 py-1 bg-indigo-500/10 text-indigo-300 text-xs rounded-full"
+                className="px-2 py-1 bg-[#FF8000]/10 text-[#FF9933] text-xs rounded-full"
               >
                 {tag}
               </span>
@@ -149,7 +145,7 @@ const MaterialCard = ({
           <a
             href={`/${file}`}
             download
-            className="flex items-center gap-2 px-4 py-2 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 rounded-lg text-sm font-medium transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-[#FF8000]/10 hover:bg-[#FF8000]/20 text-[#FF8000] rounded-lg text-sm font-medium transition-colors"
           >
             <Download size={16} />
             Baixar
@@ -157,7 +153,7 @@ const MaterialCard = ({
           {isMarkdown ? (
             <Link
               href={viewUrl}
-              className="flex items-center gap-2 px-4 py-2 bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 rounded-lg text-sm font-medium transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-[#FF8000]/20 hover:bg-[#FF8000]/30 text-[#FF9933] rounded-lg text-sm font-medium transition-colors"
             >
               <FileText size={16} />
               Ver Formatado
@@ -204,8 +200,10 @@ interface Material {
 const MaterialsSection = () => {
   const [materials, setMaterials] = useState<Material[]>([]);
   const [loading, setLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     fetch("/materials.json")
       .then((res) => res.json())
       .then((data) => {
@@ -241,7 +239,7 @@ const MaterialsSection = () => {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#FF8000] to-cyan-400 bg-clip-text text-transparent">
           Materiais Disponíveis
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -249,9 +247,9 @@ const MaterialsSection = () => {
         </p>
       </motion.div>
 
-      {loading ? (
+      {!mounted || loading ? (
         <div className="text-center py-12">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-400"></div>
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#FF8000]"></div>
           <p className="mt-4 text-gray-400">Carregando materiais...</p>
         </div>
       ) : materials.length === 0 ? (
@@ -289,8 +287,10 @@ const MaterialsSection = () => {
 const MediaPreview = () => {
   const [materials, setMaterials] = useState<Material[]>([]);
   const [loading, setLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     fetch("/materials.json")
       .then((res) => res.json())
       .then((data) => {
@@ -307,8 +307,6 @@ const MediaPreview = () => {
   const audios = materials.filter((m) => m.type === "audio");
   const images = materials.filter((m) => m.type === "image");
 
-  if (loading) return null;
-
   return (
     <section className="max-w-7xl mx-auto px-4 py-24">
       <motion.div
@@ -317,12 +315,18 @@ const MediaPreview = () => {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#FF8000] to-cyan-400 bg-clip-text text-transparent">
           Visualizações
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {!mounted || loading ? (
+        <div className="text-center py-12">
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#FF8000]"></div>
+          <p className="mt-4 text-gray-400">Carregando visualizações...</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Video Players */}
         {videos.map((video, index) => (
           <motion.div
@@ -390,45 +394,78 @@ const MediaPreview = () => {
               {image.title}
             </h3>
             <div className="relative w-full h-[600px] rounded-xl overflow-hidden bg-black/20">
-              <Image
-                src={`/${image.file}`}
-                alt={image.title}
-                fill
-                className="object-contain"
-                unoptimized
-              />
+              {mounted && (
+                <Image
+                  src={`/${image.file}`}
+                  alt={image.title}
+                  fill
+                  className="object-contain"
+                  unoptimized
+                />
+              )}
             </div>
           </motion.div>
         ))}
-      </div>
+        </div>
+      )}
     </section>
   );
 };
 
 // 4. FOOTER
-const Footer = () => (
-  <footer className="border-t border-white/10 pt-20 pb-10 px-4">
-    <div className="max-w-7xl mx-auto text-center">
-      <h3 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-4">
-        Artefatos do NotebookLM
-      </h3>
-      <p className="text-gray-400 mb-6 text-sm">
-        Organize e compartilhe seus estudos do NotebookLM
-      </p>
-      <p className="text-gray-500 text-xs">
-        © {new Date().getFullYear()} - Template open source para a comunidade
-      </p>
-    </div>
-  </footer>
-);
+const Footer = () => {
+  return (
+    <footer className="border-t border-white/10 pt-20 pb-10 px-4">
+      <div className="max-w-7xl mx-auto text-center">
+        <h3 className="text-2xl font-bold bg-gradient-to-r from-[#FF8000] to-cyan-400 bg-clip-text text-transparent mb-4">
+          Artefatos do NotebookLM
+        </h3>
+        <p className="text-gray-400 mb-6 text-sm">
+          Organize e compartilhe seus estudos do NotebookLM
+        </p>
+        <p className="text-gray-500 text-xs mb-2" suppressHydrationWarning>
+          © {typeof window !== "undefined" ? new Date().getFullYear() : "2024"} - Template open source para a comunidade
+        </p>
+        <p className="text-gray-600 text-xs">
+          Template base:{" "}
+          <a
+            href="https://github.com/araguaci/notebooklm-showcase"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#FF8000] hover:text-[#FF9933] underline underline-offset-2 transition-colors"
+          >
+            notebooklm-showcase
+          </a>
+        </p>
+      </div>
+    </footer>
+  );
+};
 
 // --- MAIN PAGE ---
 export default function Page() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="min-h-screen bg-[#030303] text-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#FF8000] mb-4"></div>
+          <p className="text-gray-400">Carregando...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-[#030303] text-white selection:bg-indigo-500/30">
+    <div className="min-h-screen bg-[#030303] text-white selection:bg-[#FF8000]/30">
       {/* Background Glows */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[10%] -left-[10%] h-[40%] w-[40%] rounded-full bg-indigo-500/10 blur-[120px]" />
+        <div className="absolute -top-[10%] -left-[10%] h-[40%] w-[40%] rounded-full bg-[#FF8000]/10 blur-[120px]" />
         <div className="absolute top-[20%] -right-[10%] h-[50%] w-[50%] rounded-full bg-blue-500/5 blur-[120px]" />
       </div>
 
